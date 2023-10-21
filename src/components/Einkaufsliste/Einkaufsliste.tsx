@@ -61,9 +61,7 @@ const Einkaufsliste = () => {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(itemList);
-  }, [itemList]);
+
 
   const handleDelete = async (id: any) => {
     remove(ref(db, Firebase.auth().currentUser?.uid + "/" + id));
