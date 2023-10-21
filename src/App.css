@@ -58,17 +58,41 @@ canvas {
 
 
 
+.MuiInputBase-colorPrimary {
+  color: #fff !important;
+  width: 100% !important;
+}
+
+.MuiFilledInput-root::after{
+  background: rgba(0, 0, 0, 0.8) !important; ;
+  color: #fff !important;
+  border-bottom: 2px solid #00fed7 !important;
+}
+.MuiFilledInput-root {
+  background: rgba(0, 0, 0, 0.8) !important; ;
+  color: #fff !important;
+  border-radius: 10px !important;
+}
+.MuiFormLabel-root {
+  color: #00fed7 !important;
+}
+.MuiDialog-paper {
+  background: rgba(0, 118, 122, 0.8) !important; ;
+  color: #fff !important;
+  border-radius: 10px !important;
+}
+
 
 @media only screen and (max-width: 950px) {
   .main-container {
     top: 110px;
-    width: 95vw;
+    width: 100vw;
     /* Fallback for browsers that do not support Custom Properties */
-    height: 95vh !important;
+    height: 100vh !important;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
+    border-radius: 0px;
     margin: auto;
-   max-height: 98vh;
+   max-height: 100vh;
    
   }
 }
