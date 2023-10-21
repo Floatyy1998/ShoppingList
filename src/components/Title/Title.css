@@ -8,14 +8,14 @@
   text-transform: uppercase;
  
 
-  background: -webkit-linear-gradient(#00fed7, #8cfae9);
+  background: -webkit-linear-gradient(#EC449B, #00FFFF);
   -webkit-background-clip: text;
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
 }
 #registerHint{
-  color: #00fed7;
+  color: #00FFFF;
   font-size: 1rem;
   font-weight: 700;
   margin-top: 1rem;
@@ -35,7 +35,7 @@
     text-transform: uppercase;
 
     margin-left: calc(7%);
-    background: -webkit-linear-gradient(#00fed7, #8cfae9);
+    background: -webkit-linear-gradient(#EC449B, #00FFFF);
     -webkit-background-clip: text;
     background-clip: text;
 
