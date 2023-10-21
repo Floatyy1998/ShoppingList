@@ -108,7 +108,8 @@ const Einkaufsliste = () => {
           <form className="newItem-form" onSubmit={handleAdd}>
             <div className="newItem-form_group">
               <TextField
-                autoComplete="off"
+               autoComplete="none"
+                autoCapitalize="sentences"
                 id="newItem"
                 label="Produkt"
                 variant="filled"
@@ -121,7 +122,8 @@ const Einkaufsliste = () => {
               <TextField
                 id="newItem"
                 label="Beschreibung"
-                autoComplete="off"
+                autoCapitalize="sentences"
+                autoComplete="none"
                 variant="filled"
                 value={newItemBeschreibung}
                 onChange={(e) => setNewItemBeschreibung(e.target.value)}

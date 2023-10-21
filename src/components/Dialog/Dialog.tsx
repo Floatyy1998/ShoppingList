@@ -6,7 +6,6 @@ import {
   DialogContent,
   DialogTitle,
   Button,
-
   TextField,
 } from "@mui/material";
 
@@ -14,14 +13,13 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { getDatabase, ref, update } from "firebase/database";
 import validator from "validator";
 
-
 const CustomDialog = (props: any) => {
   const [newItem, setNewItem] = useState("");
   const [newItemBeschreibung, setNewItemBeschreibung] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [itemError, setItemError] = useState(false);
   const handleChange = () => {
-  setItemError(false);
+    setItemError(false);
 
     if (validator.isEmpty(newItem)) {
       setErrorMessage("Bitte gib ein Produkt ein");
@@ -30,9 +28,9 @@ const CustomDialog = (props: any) => {
     }
     const db = getDatabase();
     update(ref(db, Firebase.auth().currentUser?.uid + "/" + props.item.id), {
-        name: newItem,
-        beschreibung: newItemBeschreibung,
-        });
+      name: newItem,
+      beschreibung: newItemBeschreibung,
+    });
     props.close();
   };
 
@@ -51,12 +49,11 @@ const CustomDialog = (props: any) => {
         onClose={props.close}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-       
       >
         <DialogTitle
           style={{
             textAlign: "center",
-           
+
             color: "#fff",
             paddingBottom: "0",
             fontSize: "1.5rem",
@@ -74,7 +71,7 @@ const CustomDialog = (props: any) => {
               borderRadius: "10px",
               width: "2rem",
               height: "auto",
-             
+
               color: "red",
             }}
           />
@@ -83,33 +80,31 @@ const CustomDialog = (props: any) => {
             style={{
               margin: "auto",
               textAlign: "center",
-             
+
               width: "90%",
             }}
           >
-           {props.item.name} ändern
+            {props.item.name} ändern
           </p>
         </DialogTitle>
-        <DialogContent
-          id="alert-dialog-description"
-          style={{  }}
-        >
+        <DialogContent id="alert-dialog-description" style={{}}>
           <form className="newItem-form" onSubmit={handleChange}>
             <div className="newItem-form_group">
               <TextField
-              autoComplete="off"
+                autoComplete="none"
                 id="newItem"
                 label="Produkt"
                 variant="filled"
                 value={newItem}
                 error={itemError}
-               
+                autoCapitalize="sentences"
                 helperText={itemError && errorMessage}
                 onChange={(e) => setNewItem(e.target.value)}
                 style={{ width: "50%", marginBottom: "2%" }}
               />
               <TextField
-              autoComplete="off"
+                autoComplete="none"
+                autoCapitalize="sentences"
                 id="newItem"
                 label="Beschreibung"
                 variant="filled"
@@ -123,13 +118,18 @@ const CustomDialog = (props: any) => {
         <DialogActions
           style={{
             color: "#00fed7",
-           
+
             justifyContent: "space-around",
             padding: "3%",
           }}
           id="dialog-footer"
         >
-          <Button onClick={()=>{handleChange()}} id="newItem-button">
+          <Button
+            onClick={() => {
+              handleChange();
+            }}
+            id="newItem-button"
+          >
             Ändern
           </Button>
         </DialogActions>
