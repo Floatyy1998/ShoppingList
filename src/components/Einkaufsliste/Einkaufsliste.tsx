@@ -132,7 +132,7 @@ const Einkaufsliste = () => {
               </Button>
             </div>
           </form>
-          <SwipeableList threshold={0.2} destructiveCallbackDelay={400}>
+          <SwipeableList threshold={0.2} destructiveCallbackDelay={300}>
             {itemList
               .sort((a, b) => {
                 if (a.name.toUpperCase() < b.name.toUpperCase()) {
