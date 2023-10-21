@@ -1,0 +1,94 @@
+.einkaufsliste-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #00fed7;
+  padding: 3%;
+  border-radius: 30px;
+}
+.newItem-form_group {
+  display: flex !important;
+  flex-direction: column !important;
+
+  justify-content: left;
+  align-items: left;
+  width: 98%;
+  height: 100%;
+}
+.newItem-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+
+#newItem-button {
+  margin: auto !important;
+  border: 1px solid #00fed7 !important;
+  color: #00fed7 !important;
+  border-radius: 20px !important;
+  width: 10% !important;
+  min-width: 200px !important;
+  height: 5vh !important;
+  min-height: 50px !important;
+  max-width: 90% !important;
+  background: rgba(0, 0, 0, 0.8);
+}
+.swipeable-list {
+  width: 100%;
+  height: 80% !important;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll !important;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  padding: 2%;
+}
+.swipeable-list-item {
+  width: 100%;
+  height: fit-content;
+  border: 1px solid #00fed7;
+  padding: 1%;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+}
+.item-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00fed7;
+  text-align: left;
+}
+.item-beschreibung {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+.swipeable-list-item__trailing-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.ActionContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  box-sizing: border-box;
+  color: #eee;
+  user-select: none;
+}
+.ItemColumnCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
