@@ -78,6 +78,7 @@ const Login = (props: any) => {
               <div className="form_group">
                 <TextField
                   id="username"
+                  autoCapitalize="none"
                   label="Email"
                   variant="filled"
                   value={email}
@@ -88,6 +89,7 @@ const Login = (props: any) => {
                 />
                 <TextField
                   id="password"
+                  autoCapitalize="none"
                   type="password"
                   label="Passwort"
                   variant="filled"
