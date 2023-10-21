@@ -117,7 +117,7 @@ const CustomDialog = (props: any) => {
         </DialogContent>
         <DialogActions
           style={{
-            color: "#00fed7",
+            color: "#00FFFF",
 
             justifyContent: "space-around",
             padding: "3%",

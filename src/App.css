@@ -8,7 +8,7 @@
   display: none;
 }
 
-#root{
+#root {
   overflow: hidden;
 }
 .App {
@@ -23,10 +23,9 @@
 canvas {
   background: linear-gradient(
     140deg,
-    rgb(47, 102, 105) 0%,
-    rgb(65, 142, 146) 50%,
-    rgba(0, 212, 255, 1) 100%
-    
+    rgba(255, 105, 180, 0.8) 0%,
+    rgba(243, 148, 195, 0.7) 50%,
+    rgba(255, 105, 180, 0.8) 100%
   );
   overflow: hidden;
 }
@@ -46,8 +45,7 @@ canvas {
   border-radius: 30px;
   margin: auto;
   max-height: calc(100vh);
-  
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,34 +53,32 @@ canvas {
   padding: 3%;
 }
 
-
-
-
 .MuiInputBase-colorPrimary {
   color: #fff !important;
   width: 100% !important;
 }
 
-.MuiFilledInput-root::after{
-  background: rgba(0, 0, 0, 0.8) !important; ;
+.MuiFilledInput-root::after {
+  background: rgba(0, 0, 0, 0.5) !important;
   color: #fff !important;
-  border-bottom: 2px solid #00fed7 !important;
+  border-bottom: 2px solid #00FFFF !important;
 }
 .MuiFilledInput-root {
-  background: rgba(0, 0, 0, 0.8) !important; ;
+  background: rgba(0, 0, 0, 0.5) !important;
   color: #fff !important;
   border-radius: 10px !important;
 }
 .MuiFormLabel-root {
-  color: #00fed7 !important;
+  color: #00FFFF !important;
 }
 .MuiDialog-paper {
-  background: rgba(0, 118, 122, 0.8) !important; ;
+  background: rgba(255, 105, 180, 0.3) !important;
   color: #fff !important;
   border-radius: 10px !important;
 }
-
-
+#dialog-title{
+  color:#00FFFF !important;
+}
 @media only screen and (max-width: 950px) {
   .main-container {
     top: 110px;
@@ -92,7 +88,6 @@ canvas {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 0px;
     margin: auto;
-   max-height: 100vh;
-   
+    max-height: 100vh;
   }
 }
