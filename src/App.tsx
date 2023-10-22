@@ -18,6 +18,10 @@ import banana from "./assests/particlesImages/banane.png";
 import pizza1 from "./assests/particlesImages/pizza.png";
 import pizza2 from "./assests/particlesImages/pizza2.png";
 import fruits from "./assests/particlesImages/fruits-and-vegetables.png";
+import grapes from "./assests/particlesImages/grapes.png";
+import hamburger from "./assests/particlesImages/hamburger.png";
+import vegetable from "./assests/particlesImages/vegetable.png";
+import carrot from "./assests/particlesImages/carrot.png";
 
 function App() {
   const [login, setLogin] = useState("");
@@ -197,16 +201,7 @@ function App() {
                     width: 70,
                     height: 70
                   },
-                  // {
-                  //   "src": wordpress,
-                  //   "width": 20,
-                  //   "height": 20
-                  // },
-                  // {
-                  //   "src": shopify,
-                  //   "width": 20,
-                  //   "height": 20
-                  // },
+                  
                   {
                     src: krapfen,
                     width: 70,
@@ -217,11 +212,7 @@ function App() {
                     width: 70,
                     height: 70
                   },
-                  // {
-                  //   "src": mysqlIcon,
-                  //   "width": 20,
-                  //   "height": 20
-                  // },
+                 
                   {
                     src: donuts,
                     width: 70,
@@ -236,6 +227,25 @@ function App() {
                     height: 70
                   },  {
                     src: pizza2,
+                    width: 70,
+                    height: 70
+                  },  {
+                    src: hamburger,
+                    width: 70,
+                    height: 70
+                  }
+                  ,  {
+                    src: vegetable,
+                    width: 70,
+                    height: 70
+                  }
+                  ,  {
+                    src: grapes,
+                    width: 70,
+                    height: 70
+                  }
+                  ,  {
+                    src: carrot,
                     width: 70,
                     height: 70
                   },  {
