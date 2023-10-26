@@ -5,7 +5,6 @@ import Firebase from "firebase/compat/app";
 import Title from "../Title/Title";
 import "./Einkaufsliste.css";
 import {
-
   SwipeableList,
   SwipeableListItem,
   SwipeAction,
@@ -54,7 +53,7 @@ const Einkaufsliste = () => {
     </TrailingActions>
   );
   useEffect(() => {
-    onValue(itemListRef, (snapshot) => {
+    return onValue(itemListRef, (snapshot) => {
       const data = snapshot.val();
       const itemList = [];
       for (let id in data) {
@@ -62,10 +61,10 @@ const Einkaufsliste = () => {
       }
       setItemList(itemList);
     });
-  }, [itemListRef]);
+  }, []);
 
   const handleDelete = async (id: any) => {
-    remove(ref(db, Firebase.auth().currentUser?.uid + "/" + id));
+    await remove(ref(db, Firebase.auth().currentUser?.uid + "/" + id));
   };
   const handleAdd = async (event: any) => {
     event.preventDefault();
@@ -77,15 +76,11 @@ const Einkaufsliste = () => {
       return;
     }
 
-    const newItemRef = push(itemListRef);
-    set(newItemRef, {
+    const newItemRef = await push(itemListRef);
+    await set(newItemRef, {
       name: newItem,
       beschreibung: newItemBeschreibung,
-    })
-      .then(() => {
-        console.log("success");
-      })
-      .catch((error) => {});
+    });
     setNewItem("");
     setNewItemBeschreibung("");
   };
@@ -108,7 +103,7 @@ const Einkaufsliste = () => {
           <form className="newItem-form" onSubmit={handleAdd}>
             <div className="newItem-form_group">
               <TextField
-               autoComplete="none"
+                autoComplete="none"
                 autoCapitalize="sentences"
                 id="newItem"
                 label="Produkt"
@@ -134,7 +129,7 @@ const Einkaufsliste = () => {
               </Button>
             </div>
           </form>
-          <SwipeableList  threshold={0.2} destructiveCallbackDelay={200}>
+          <SwipeableList threshold={0.2} destructiveCallbackDelay={200}>
             {itemList
               .sort((a, b) => {
                 if (a.name.toUpperCase() < b.name.toUpperCase()) {
@@ -152,7 +147,6 @@ const Einkaufsliste = () => {
                   }}
                   key={item.id}
                   trailingActions={trailingActions(item.id)}
-                  onSwipeEnd={() => console.info("Swipe End")}
                   maxSwipe={1}
                 >
                   <div className="item-container">
