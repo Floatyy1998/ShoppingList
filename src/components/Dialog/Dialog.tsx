@@ -18,7 +18,7 @@ const CustomDialog = (props: any) => {
   const [newItemBeschreibung, setNewItemBeschreibung] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [itemError, setItemError] = useState(false);
-  const handleChange = () => {
+  const handleChange = async () => {
     setItemError(false);
 
     if (validator.isEmpty(newItem)) {
@@ -27,7 +27,7 @@ const CustomDialog = (props: any) => {
       return;
     }
     const db = getDatabase();
-    update(ref(db, Firebase.auth().currentUser?.uid + "/" + props.item.id), {
+   await  update(ref(db, Firebase.auth().currentUser?.uid + "/" + props.item.id), {
       name: newItem,
       beschreibung: newItemBeschreibung,
     });
