@@ -23,9 +23,9 @@
 canvas {
   background: linear-gradient(
     140deg,
-    rgba(255, 105, 180, 0.8) 0%,
-    rgba(243, 148, 195, 0.7) 50%,
-    rgba(255, 105, 180, 0.8) 100%
+    rgba(255, 249, 195, 1) 0%,
+    rgba(255, 249, 195, 0.9) 50%,
+    rgba(255, 249, 195, 1) 100%
   );
   overflow: hidden;
 }
@@ -41,7 +41,7 @@ canvas {
   width: 60%;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: 98vh;
-  background: rgba(0, 0, 0, 0.3);
+
   border-radius: 30px;
   margin: auto;
   max-height: calc(100vh);
@@ -50,44 +50,84 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3%;
+}
+
+.MuiFormControl-root {
+  width: 96% !important;
+
+ padding: 1% !important;
+  border-radius: 10px !important;
+
 }
 
 .MuiInputBase-colorPrimary {
-  color: #fff !important;
+  color: #682219 !important;
   width: 100% !important;
 }
 
 .MuiFilledInput-root::after {
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(216, 169, 106, 0.8) !important;
   color: #fff !important;
-  border-bottom: 2px solid #00FFFF !important;
+  border-bottom: 2px solid #682219 !important;
 }
 .MuiFilledInput-root {
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #fff !important;
-  border-radius: 10px !important;
+  border-bottom: 0px solid #682219 !important;
+  background: rgba(216, 169, 106, 0.8) !important;
+  color: #682219 !important;
+  border-radius: 30px !important;
+  text-align: center !important;
+ 
+ 
+}
+.MuiFilledInput-root::before {
+  border-bottom: 0px solid #682219 !important;
+
+  color: #682219 !important;
+  border-radius: 30px !important;
 }
 .MuiFormLabel-root {
-  color: #00FFFF !important;
+  color: #682219 !important;
 }
 .MuiDialog-paper {
   background: rgba(255, 105, 180, 0.3) !important;
-  color: #fff !important;
+  color: #682219 !important;
   border-radius: 10px !important;
 }
-#dialog-title{
-  color:#00FFFF !important;
+.MuiInputLabel-root {
+  text-align: center !important;
+  width: 100% !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  line-height: 2.5 !important;
+}
+.MuiInputLabel-shrink {
+  margin: auto !important;
+  width: 150px !important;
+  left: calc(50% - 86px) !important;
+  transform-origin: top !important;
+}
+#dialog-title {
+  color: #682219 !important;
 }
 @media only screen and (max-width: 950px) {
   .main-container {
     top: 110px;
-    width: 100vw;
+    width: 86vw;
     /* Fallback for browsers that do not support Custom Properties */
-    height: 100vh !important;
-    background: rgba(0, 0, 0, 0.3);
+    height: 90vh !important;
+    background: rgba(0, 0, 0, 0);
     border-radius: 0px;
     margin: auto;
     max-height: 100vh;
   }
+  .MuiFormControl-root {
+    width: 96% !important;
+padding: 1% !important;
+
+    border-radius: 10px !important;
+  }
+  .MuiInputLabel-root {
+    line-height: 1.5 !important;
+  }
+
 }

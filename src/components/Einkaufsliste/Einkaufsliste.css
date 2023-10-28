@@ -1,9 +1,32 @@
 .einkaufsliste-container {
   width: 100%;
   height: 100%;
-  border: 2px solid #00FFFF;
-  padding: 3%;
+  border: 2px solid #682219;
+
   border-radius: 30px;
+}
+.einkaufsliste-header {
+  width: 100%;
+
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.image{
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  left: 5%;
+  z-index: -1;
 }
 .newItem-form_group {
   display: flex !important;
@@ -20,22 +43,23 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 25%;
+  height: 26%;
 }
 
 #newItem-button {
-  margin: 0 !important;
+  margin: 1% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  border: 2px solid #00FFFF !important;
-  color: #00FFFF !important;
+  border: 2px solid #682219 !important;
+  color: #682219 !important;
   border-radius: 20px !important;
   width: 10% !important;
   min-width: 200px !important;
   height: 25% !important;
   min-height: 40px !important;
   max-width: 90% !important;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(216, 169, 106, 0.8) !important;
+  font-weight: bold !important;
 }
 .swipeable-list {
   width: 100%;
@@ -45,29 +69,31 @@
   overflow-y: scroll !important;
   margin-top: 2%;
   margin-bottom: 2%;
-  border-top: 2px solid #00FFFF;
+  border-radius: 30px;
+  background: rgba(216, 169, 106, 0.8);
   padding: 2%;
 }
 .swipeable-list-item {
   width: 100%;
   height: fit-content;
-  border: 2px solid #00FFFF;
+  border: 2px solid #682219;
   padding: 1%;
-  border-radius: 10px;
+  padding-left: 12px;
+  border-radius: 30px;
   margin-bottom: 2%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(216, 169, 106, 0.8);
   color: rgba(255, 255, 255, 0.8);
 }
 .item-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #00FFFF;
+  color: #682219;
   text-align: left;
 }
 .item-beschreibung {
   font-size: 1rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   text-align: left;
 }
 .swipeable-list-item__trailing-actions {
@@ -104,8 +130,7 @@
     overflow-y: scroll !important;
     margin-top: 2%;
     margin-bottom: 2%;
-    border-top: 2px solid #00FFFF;
+
     padding: 2%;
   }
-
 }
