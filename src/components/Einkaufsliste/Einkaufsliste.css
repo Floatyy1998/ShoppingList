@@ -27,6 +27,7 @@
   margin: auto;
   left: 5%;
   z-index: -1;
+  transform: translateY(15px);
 }
 .newItem-form_group {
   display: flex !important;

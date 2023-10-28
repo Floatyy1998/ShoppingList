@@ -54,7 +54,7 @@ canvas {
 
 .MuiFormControl-root {
   width: 96% !important;
-
+margin: auto !important;
  padding: 1% !important;
   border-radius: 10px !important;
 
