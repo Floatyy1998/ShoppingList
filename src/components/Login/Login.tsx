@@ -5,6 +5,7 @@ import "firebase/compat/auth";
 import validator from "validator";
 import "./Login.css";
 import Title from "../Title/Title";
+import henkel from "../../assests/Henkel2Fertig.png";
 
 const Login = (props: any) => {
   const [email, setEmail] = useState("");
@@ -73,7 +74,10 @@ const Login = (props: any) => {
       <div className="main-container">
         {register ? (
           <>
-            <Title title="Registrieren" />
+            <div className="einkaufsliste-header">
+          <Title classes="title inner" title="Registrieren" />
+          <img className="inner image" src={henkel} alt="" />
+        </div>
             <form className="login-form" onSubmit={handleRegister}>
               <div className="form_group">
                 <TextField
@@ -85,7 +89,8 @@ const Login = (props: any) => {
                   error={mailError}
                   helperText={mailError && errorMessage}
                   onChange={(e) => setEmail(e.target.value)}
-                  style={{marginBottom:"10%"}}
+                  style={{ marginBottom: "10%" }}
+                  inputProps={{ style: { textAlign: "center" } }}
                 />
                 <TextField
                   id="password"
@@ -97,7 +102,8 @@ const Login = (props: any) => {
                   helperText={passwordError && errorMessage}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  style={{marginBottom:"10%"}}
+                  style={{ marginBottom: "10%" }}
+                  inputProps={{ style: { textAlign: "center" } }}
                 />
 
                 <Button type="submit" variant="outlined" id="login-button">
@@ -111,7 +117,10 @@ const Login = (props: any) => {
           </>
         ) : (
           <>
-            <Title title="Einloggen" />
+           <div className="einkaufsliste-header">
+          <Title classes="title inner" title="Einloggen" />
+          <img className="inner image" src={henkel} alt="" />
+        </div>
             <form className="login-form" onSubmit={handleLogin}>
               <div className="form_group">
                 <TextField
@@ -122,8 +131,9 @@ const Login = (props: any) => {
                   error={mailError}
                   helperText={mailError && errorMessage}
                   onChange={(e) => setEmail(e.target.value)}
-                  style={{marginBottom:"10%"}}
-                 />
+                  style={{ marginBottom: "10%" }}
+                  inputProps={{ style: { textAlign: "center" } }}
+                />
                 <TextField
                   id="password"
                   type="password"
@@ -133,8 +143,8 @@ const Login = (props: any) => {
                   helperText={passwordError && errorMessage}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  style={{marginBottom:"10%"}}
-                 
+                  style={{ marginBottom: "10%" }}
+                  inputProps={{ style: { textAlign: "center" } }}
                 />
 
                 <Button type="submit" variant="outlined" id="login-button">

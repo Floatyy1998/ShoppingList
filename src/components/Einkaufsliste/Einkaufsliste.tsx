@@ -22,6 +22,8 @@ import {
 } from "firebase/database";
 import validator from "validator";
 import CustomDialog from "../Dialog/Dialog";
+import henkel from "../../assests/Henkel2Fertig.png";
+
 const Einkaufsliste = () => {
   const [newItem, setNewItem] = useState("");
   const [newItemBeschreibung, setNewItemBeschreibung] = useState("");
@@ -98,7 +100,11 @@ const Einkaufsliste = () => {
         close={() => setOpen(false)}
       ></CustomDialog>
       <div className="main-container">
-        <Title title="Einkaufsliste" />
+        <div className="einkaufsliste-header">
+          <Title classes="title inner" title="Mein Einkaufskorb" />
+          <img className="inner image" src={henkel} alt="" />
+        </div>
+
         <div className="einkaufsliste-container">
           <form className="newItem-form" onSubmit={handleAdd}>
             <div className="newItem-form_group">
@@ -112,7 +118,12 @@ const Einkaufsliste = () => {
                 error={itemError}
                 helperText={itemError && errorMessage}
                 onChange={(e) => setNewItem(e.target.value)}
-                style={{ width: "50%", marginBottom: "2%" }}
+                style={{
+                  width: "50%",
+                
+                  textAlign: "center",
+                }}
+                inputProps={{ style: { textAlign: "center" } }}
               />
               <TextField
                 id="newItem"
@@ -122,7 +133,8 @@ const Einkaufsliste = () => {
                 variant="filled"
                 value={newItemBeschreibung}
                 onChange={(e) => setNewItemBeschreibung(e.target.value)}
-                style={{ width: "50%", marginBottom: "2%" }}
+                style={{ width: "50%",  }}
+                inputProps={{ style: { textAlign: "center" } }}
               />
               <Button type="submit" id="newItem-button">
                 Hinzufügen

@@ -1,39 +1,29 @@
-
 import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/Login/Login";
 import { useCallback, useEffect, useState } from "react";
 import Firebase from "firebase/compat/app";
-import  { Button } from "@mui/material";
+import { Button } from "@mui/material";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
 import type { Container, Engine } from "tsparticles-engine";
 import Einkaufsliste from "./components/Einkaufsliste/Einkaufsliste";
-import muffin from "./assests/particlesImages/muffin.png";
-import muffins from "./assests/particlesImages/muffins.png";
-import krapfen from "./assests/particlesImages/krapfen.png";
-import cupcake from "./assests/particlesImages/cupcake.png";
-import donuts from "./assests/particlesImages/donuts.png";
-import banana from "./assests/particlesImages/banane.png";
-import pizza1 from "./assests/particlesImages/pizza.png";
-import pizza2 from "./assests/particlesImages/pizza2.png";
-import fruits from "./assests/particlesImages/fruits-and-vegetables.png";
-import grapes from "./assests/particlesImages/grapes.png";
-import hamburger from "./assests/particlesImages/hamburger.png";
-import vegetable from "./assests/particlesImages/vegetable.png";
-import carrot from "./assests/particlesImages/carrot.png";
+import Donut from "./assests/particlesImages/Donut.png";
+import Donut2 from "./assests/particlesImages/Donut2.png";
+import Donut3 from "./assests/particlesImages/Donut3.png";
+import Brokkoli from "./assests/particlesImages/Brokkoli.png";
+import Pizza from "./assests/particlesImages/Pizza.png";
+import Cherry from "./assests/particlesImages/Cherry.png";
+import Burger from "./assests/particlesImages/Burger.png";
 
 function App() {
   const [login, setLogin] = useState("");
   const [particles, setParticles] = useState(80);
 
   useEffect(() => {
-   
-
     if (window.innerWidth < 950) {
-      setParticles(30);
+      setParticles(15);
     }
-    
   }, []);
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
@@ -42,8 +32,6 @@ function App() {
     async (container: Container | undefined) => {},
     []
   );
-
- 
 
   const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -62,238 +50,198 @@ function App() {
   return (
     <div className="App">
       <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            fullScreen: {
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          fullScreen: {
+            enable: true,
+            zIndex: 1,
+          },
+          detectRetina: true,
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: false,
+                mode: "push",
+              },
+              onDiv: {
+                elementId: "repulse-div",
+                enable: false,
+                mode: "repulse",
+              },
+              onHover: {
+                enable: false,
+                mode: "bubble",
+                parallax: {
+                  enable: false,
+                  force: 60,
+                  smooth: 10,
+                },
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 400,
+                duration: 2,
+                opacity: 0.9,
+                size: 2,
+              },
+              connect: {
+                distance: 80,
+                lineLinked: {
+                  opacity: 0.5,
+                },
+                radius: 60,
+              },
+              grab: {
+                distance: 400,
+                lineLinked: {
+                  opacity: 1,
+                },
+              },
+              push: {
+                quantity: 2,
+              },
+              remove: {
+                quantity: 2,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#ffffff",
+            },
+            lineLinked: {
+              blink: false,
+              color: "#000",
+              consent: false,
+              distance: 150,
+              enable: false,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              
+              bounce: false,
+              direction: "none",
               enable: true,
-              zIndex: 1
+              outMode: "out",
+              random: true,
+              speed: 2,
+              straight: false,
+             
             },
-            detectRetina: true,
-            fpsLimit: 60,
-            interactivity: {
-              events: {
-                onClick: {
-                  enable: true,
-                  mode: "push"
-                },
-                onDiv: {
-                  elementId: "repulse-div",
-                  enable: false,
-                  mode: "repulse"
-                },
-                onHover: {
-                  enable: false,
-                  mode: "bubble",
-                  parallax: {
-                    enable: false,
-                    force: 60,
-                    smooth: 10
-                  }
-                },
-                resize: true
-              },
-              modes: {
-                bubble: {
-                  distance: 400,
-                  duration: 2,
-                  opacity: 0.9,
-                  size: 2
-                },
-                connect: {
-                  distance: 80,
-                  lineLinked: {
-                    opacity: 0.5
-                  },
-                  radius: 60
-                },
-                grab: {
-                  distance: 400,
-                  lineLinked: {
-                    opacity: 1
-                  }
-                },
-                push: {
-                  quantity: 2
-                },
-                remove: {
-                  quantity: 2
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4
-                }
-              }
+            number: {
+              value: particles,
             },
-            particles: {
-              color: {
-                value: "#ffffff"
-              },
-              lineLinked: {
-                blink: false,
-                color: "#000",
-                consent: false,
-                distance: 150,
+            opacity: {
+              animation: {
                 enable: false,
-                opacity: 0.4,
-                width: 1
+                minimumValue: 0.8,
+                speed: 1,
+                sync: false,
               },
-              move: {
-                attract: {
-                  enable: false,
-                  rotate: {
-                    x: 600,
-                    y: 1200
-                  }
-                },
-                bounce: false,
-                direction: "none",
+              random: false,
+              value: 0.5,
+            },
+            rotate: {
+              animation: {
                 enable: true,
-                outMode: "out",
-                random: false,
-                speed: 2,
-                straight: false
+                speed: 5,
+                sync: false,
               },
-              number: {
-               
-                
-                value: particles
-              },
-              opacity: {
-                animation: {
-                  enable: true,
-                  minimumValue: 0.2,
-                  speed: 1,
-                  sync: false
-                },
-                random: true,
-                value: 1
-              },
-              rotate: {
-                animation: {
-                  enable: true,
-                  speed: 5,
-                  sync: false
-                },
-                direction: "random",
-                random: true,
-                value: 0
-              },
-              shape: {
-                character: {
-                  fill: false,
-                  font: "Verdana",
-                  style: "",
-                  value: "*",
-                  weight: "400"
-                },
-                image: [
-                  {
-                    src: muffin,
-                    width: 70,
-                    height: 70
-                  },
-                  {
-                    src: muffins,
-                    width: 70,
-                    height: 70
-                  },
-                  
-                  {
-                    src: krapfen,
-                    width: 70,
-                    height: 70
-                  },
-                  {
-                    src: cupcake,
-                    width: 70,
-                    height: 70
-                  },
-                 
-                  {
-                    src: donuts,
-                    width: 70,
-                    height: 70
-                  },  {
-                    src: banana,
-                    width: 70,
-                    height: 70
-                  },  {
-                    src: pizza1,
-                    width: 70,
-                    height: 70
-                  },  {
-                    src: pizza2,
-                    width: 70,
-                    height: 70
-                  },  {
-                    src: hamburger,
-                    width: 70,
-                    height: 70
-                  }
-                  ,  {
-                    src: vegetable,
-                    width: 70,
-                    height: 70
-                  }
-                  ,  {
-                    src: grapes,
-                    width: 70,
-                    height: 70
-                  }
-                  ,  {
-                    src: carrot,
-                    width: 70,
-                    height: 70
-                  },  {
-                    src: fruits,
-                    width: 70,
-                    height: 70
-                  }
-                  
-                ],
-                polygon: {
-                  sides: 5
-                },
-                stroke: {
-                  color: "#000000",
-                  width: 0
-                },
-                type: "image"
-              },
-              size: {
-                
-                animation: {
-                  enable: false,
-                  minimumValue: 0.1,
-                  speed: 40,
-                  sync: false
-                },
-                random: true,
-                value: 30
-              }
+              direction: "random",
+              random: true,
+              value: 0,
             },
-            polygon: {
-              draw: {
-                enable: false,
-                lineColor: "#ffffff",
-                lineWidth: 0.5
+            shape: {
+              character: {
+                fill: false,
+                font: "Verdana",
+                style: "",
+                value: "*",
+                weight: "400",
               },
-              move: {
-                radius: 10
+              image: [
+                {
+                  src: Donut,
+                  width: 70,
+                  height: 70,
+                },
+                {
+                  src: Donut2,
+                  width: 70,
+                  height: 70,
+                },
+
+                {
+                  src: Donut3,
+                  width: 70,
+                  height: 70,
+                },
+                {
+                  src: Cherry,
+                  width: 70,
+                  height: 70,
+                },
+
+                {
+                  src: Brokkoli,
+                  width: 70,
+                  height: 70,
+                },
+                {
+                  src: Burger,
+                  width: 70,
+                  height: 60,
+                },
+                {
+                  src: Pizza,
+                  width: 70,
+                  height: 30,
+                },
+              ],
+              polygon: {
+                sides: 5,
               },
-              scale: 1,
-              url: ""
+              stroke: {
+                color: "#000000",
+                width: 0,
+              },
+              type: "image",
             },
-            background: {
-              image: "",
-              position: "50% 50%",
-              repeat: "no-repeat",
-              size: "cover"
-            }
-          }}
-        />
+            size: {
+              random: true,
+              value: 60,
+            },
+          },
+          polygon: {
+            draw: {
+              enable: false,
+              lineColor: "#ffffff",
+              lineWidth: 0.5,
+            },
+            move: {
+              radius: 10,
+            },
+            scale: 1,
+            url: "",
+          },
+          background: {
+            image: "",
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover",
+          },
+        }}
+      />
       {login !== "" ? (
         <Einkaufsliste />
       ) : (

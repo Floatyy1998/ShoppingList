@@ -1,6 +1,7 @@
 #login-button {
-  border: 2px solid #00FFFF !important;
-  color: #00FFFF !important;
+  border: 2px solid #682219 !important;
+  background: rgba(216, 169, 106, 0.8) !important;
+  color: #682219 !important;
   border-radius: 20px !important;
   width: 10% !important;
   min-width: 200px !important;
@@ -8,16 +9,21 @@
   min-height: 50px !important;
   max-width: 90% !important;
   background: rgba(0, 0, 0, 0.8);
+  font-weight: bold !important;
 }
 .login-form {
   width: 100%;
   height: 100%;
-  border: 2px solid #00FFFF;
+  border: 2px solid #682219;
   padding: 3%;
   border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.login-header{
+  height: 15%;
+  width: 100%;
 }
 .form_group {
   margin: auto;
@@ -29,14 +35,16 @@
   width: 100%;
   height: fit-content;
 }
-
-.MuiFormControl-root {
-  width: 100% !important;
-
-  margin-bottom: 10% ;
-  border-radius: 10px !important;
- 
+#registerHint {
+  color: #682219;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
+
+
 
 
 
