@@ -205,8 +205,45 @@ export const suggestCategory = (itemName: string): string | undefined => {
       // Allgemein
       'milchprodukte', 'molkereiprodukte', 'laktosefrei', 'vegan', 'bio'
     ],
-    // Backwaren
+    // Backwaren & Grundnahrungsmittel
     '4': [
+      // Reis
+      'reis', 'basmati', 'basmati reis', 'jasmin reis', 'jasminreis', 'duftreis',
+      'vollkornreis', 'naturreis', 'brauner reis', 'roter reis', 'schwarzer reis',
+      'risotto reis', 'arborio', 'carnaroli', 'vialone',
+      'sushi reis', 'rundkornreis', 'klebreis', 'sticky rice',
+      'parboiled reis', 'uncle bens', 'wildreis', 'wild reis',
+      'milchreis', 'reisflocken', 'reiswaffeln',
+      'langkornreis', 'mittelkornreis', 'rundkornreis',
+      // Nudeln
+      'nudeln', 'pasta', 'spaghetti', 'penne', 'fusilli', 'farfalle', 'rigatoni',
+      'tagliatelle', 'fettuccine', 'linguine', 'pappardelle', 'lasagne', 'lasagneplatten',
+      'tortellini', 'ravioli', 'gnocchi', 'spätzle', 'schupfnudeln',
+      'makkaroni', 'macaroni', 'cannelloni', 'conchiglie', 'orecchiette',
+      'vollkornnudeln', 'dinkelnudeln', 'eiernudeln', 'hartweizennudeln',
+      'reisnudeln', 'glasnudeln', 'mie nudeln', 'udon', 'soba', 'ramen',
+      // Getreide & Körner
+      'haferflocken', 'haferflocken kernig', 'zarte haferflocken', 'schmelzflocken',
+      'cornflakes', 'müsli', 'müslimischung', 'granola', 'crunchy', 'knuspermüsli',
+      'porridge', 'overnight oats',
+      'bulgur', 'couscous', 'quinoa', 'amaranth', 'buchweizen',
+      'hirse', 'goldhirse', 'braunhirse', 'hirseflocken',
+      'dinkel', 'dinkelkörner', 'grünkern', 'ebly', 'weizenkörner',
+      'gerste', 'gerstenkörner', 'graupen', 'perlgraupen', 'rollgerste',
+      'roggen', 'roggenkörner', 'roggenflocken',
+      'hafer', 'haferkörner', 'nackthafer',
+      'polenta', 'maisgrieß', 'maisgries', 'instant polenta',
+      'grieß', 'hartweizengrieß', 'weichweizengrieß', 'dinkelgrieß',
+      // Hülsenfrüchte
+      'linsen', 'rote linsen', 'gelbe linsen', 'grüne linsen', 'braune linsen',
+      'belugalinsen', 'berglinsen', 'tellerlinsen', 'pardina linsen',
+      'kichererbsen', 'kichererbse', 'chickpeas',
+      'bohnen', 'weiße bohnen', 'kidney bohnen', 'kidneybohnen',
+      'schwarze bohnen', 'pinto bohnen', 'cannellini bohnen',
+      'dicke bohnen', 'ackerbohnen', 'saubohnen', 'fava bohnen',
+      'mungobohnen', 'azukibohnen', 'lima bohnen',
+      'erbsen', 'gelbe erbsen', 'grüne erbsen', 'split erbsen', 'schälerbsen',
+      'kichererbsenmehl', 'linsenmehl',
       // Brot
       'brot', 'laib', 'weißbrot', 'vollkornbrot', 'mehrkornbrot', 'schwarzbrot',
       'roggenbrot', 'dinkelbrot', 'weizenbrot', 'sauerteigbrot', 'bauernbrot',
