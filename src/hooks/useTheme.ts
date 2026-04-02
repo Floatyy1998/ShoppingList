@@ -15,6 +15,11 @@ export const useTheme = () => {
         } else {
           root.classList.remove('dark')
         }
+        // Update status bar color to match app background
+        const meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) {
+          meta.setAttribute('content', isDark ? '#0f172a' : '#f9fafb')
+        }
       })
     }
 
@@ -41,15 +46,20 @@ if (typeof window !== 'undefined') {
       const parsed = JSON.parse(savedTheme)
       const themeMode = parsed.state?.themeMode
 
+      const meta = document.querySelector('meta[name="theme-color"]')
       if (themeMode === 'dark') {
         root.classList.add('dark')
+        if (meta) meta.setAttribute('content', '#0f172a')
       } else if (themeMode === 'light') {
         root.classList.remove('dark')
+        if (meta) meta.setAttribute('content', '#f9fafb')
       } else if (themeMode === 'auto') {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-        if (mediaQuery.matches) {
+        const isDark = mediaQuery.matches
+        if (isDark) {
           root.classList.add('dark')
         }
+        if (meta) meta.setAttribute('content', isDark ? '#0f172a' : '#f9fafb')
       }
     } catch (e) {
       // Ignore parse errors

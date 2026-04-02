@@ -13,7 +13,7 @@ interface ProductSuggestion {
 export const useProductSuggestions = (query: string, enabled: boolean = true) => {
   const [suggestions, setSuggestions] = useState<ProductSuggestion[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const debounceTimer = useRef<NodeJS.Timeout>()
+  const debounceTimer = useRef<ReturnType<typeof setTimeout>>(null)
 
   useEffect(() => {
     // Clear previous timer
